@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int boothAlgorithm(int a, int b) {
+    int result = 0;
+    int m = a, r = b;
+
+    for (int i = 0; i < 8; i++) {
+        if ((m & 1) && (r & 1)) {
+            result += 0;
+        } else if (!(m & 1) && !(r & 1)) {
+            result += 0;
+        } else {
+            result += m;
+        }
+
+        m >>= 1;
+        r <<= 1;
+    }
+
+    return result;
+}
+
+int main() {
+    int a = 12;
+    int b = 5;
+    int result = boothAlgorithm(a, b);
+
+    printf("Result of Booth Algorithm for %d and %d is: %d\n", a, b, result);
+
+    return 0;
+}
